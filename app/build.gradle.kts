@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.neutts"
+    namespace = "com.github.kingster.neutts"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.neutts"
+        applicationId = "com.github.kingster.neutts"
         minSdk = 28
         targetSdk = 36
         versionCode = 1

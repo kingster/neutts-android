@@ -1,4 +1,4 @@
-package com.example.neutts
+package com.github.kingster.neutts
 
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment

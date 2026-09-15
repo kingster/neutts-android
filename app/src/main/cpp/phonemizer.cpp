@@ -21,7 +21,7 @@ static std::mutex g_mu;
 static bool g_initialized = false;
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_example_neutts_EspeakPhonemizer_nativeInit(JNIEnv* env, jclass, jstring jDataPath) {
+Java_com_github_kingster_neutts_EspeakPhonemizer_nativeInit(JNIEnv* env, jclass, jstring jDataPath) {
     std::lock_guard<std::mutex> lock(g_mu);
     if (g_initialized) return JNI_TRUE;
 
@@ -51,7 +51,7 @@ Java_com_example_neutts_EspeakPhonemizer_nativeInit(JNIEnv* env, jclass, jstring
  * expects one flat phoneme string per input.
  */
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_neutts_EspeakPhonemizer_nativePhonemize(JNIEnv* env, jclass, jstring jText) {
+Java_com_github_kingster_neutts_EspeakPhonemizer_nativePhonemize(JNIEnv* env, jclass, jstring jText) {
     std::lock_guard<std::mutex> lock(g_mu);
     if (!g_initialized) {
         LOGE("nativePhonemize: not initialized");
@@ -76,7 +76,7 @@ Java_com_example_neutts_EspeakPhonemizer_nativePhonemize(JNIEnv* env, jclass, js
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_example_neutts_EspeakPhonemizer_nativeTerminate(JNIEnv*, jclass) {
+Java_com_github_kingster_neutts_EspeakPhonemizer_nativeTerminate(JNIEnv*, jclass) {
     std::lock_guard<std::mutex> lock(g_mu);
     if (g_initialized) {
         espeak_Terminate();

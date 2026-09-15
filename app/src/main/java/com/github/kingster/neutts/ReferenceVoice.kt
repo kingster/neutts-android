@@ -1,4 +1,4 @@
-package com.example.neutts
+package com.github.kingster.neutts
 
 import java.io.File
 import java.nio.ByteBuffer

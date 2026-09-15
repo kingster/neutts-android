@@ -54,7 +54,7 @@ struct NeuTTSContext {
 static NeuTTSContext g_ctx;
 
 extern "C" jint
-Java_com_example_neutts_NeuTtsEngine_initNativeEngine(
+Java_com_github_kingster_neutts_NeuTtsEngine_initNativeEngine(
     JNIEnv* env, jobject /* this */, jstring jModelPath,
     jint speechGenerationStart, jint speechGenerationEnd, jint speechCodeBase) {
 
@@ -119,7 +119,7 @@ static std::vector<llama_token> tokenize(const llama_vocab* vocab, const std::st
 }
 
 extern "C" jintArray
-Java_com_example_neutts_NeuTtsEngine_nativeGenerateCodes(
+Java_com_github_kingster_neutts_NeuTtsEngine_nativeGenerateCodes(
     JNIEnv* env, jobject /* this */, jstring jPrompt) {
 
     std::lock_guard<std::mutex> lock(g_ctx.mu);
@@ -217,12 +217,12 @@ Java_com_example_neutts_NeuTtsEngine_nativeGenerateCodes(
 }
 
 extern "C" void
-Java_com_example_neutts_NeuTtsEngine_nativeStop(JNIEnv* /* env */, jobject /* this */) {
+Java_com_github_kingster_neutts_NeuTtsEngine_nativeStop(JNIEnv* /* env */, jobject /* this */) {
     g_ctx.shouldStop = true;
 }
 
 extern "C" void
-Java_com_example_neutts_NeuTtsEngine_nativeCleanup(JNIEnv* /* env */, jobject /* this */) {
+Java_com_github_kingster_neutts_NeuTtsEngine_nativeCleanup(JNIEnv* /* env */, jobject /* this */) {
     std::lock_guard<std::mutex> lock(g_ctx.mu);
     g_ctx.shouldStop = true;
     if (g_ctx.ctx) { llama_free(g_ctx.ctx); g_ctx.ctx = nullptr; }

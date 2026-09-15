@@ -1,4 +1,4 @@
-package com.example.neutts
+package com.github.kingster.neutts
 
 import android.content.Context
 import android.util.Log

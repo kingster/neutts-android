@@ -13,7 +13,7 @@
 -keep class ai.onnxruntime.** { *; }
 
 # Keep llama.cpp JNI classes
--keep class com.example.neutts.** { *; }
+-keep class com.github.kingster.neutts.** { *; }
 
 # Keep our service
--keep class com.example.neutts.NeuTTSService { *; }
+-keep class com.github.kingster.neutts.NeuTTSService { *; }

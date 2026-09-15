@@ -1,4 +1,4 @@
-package com.example.neutts
+package com.github.kingster.neutts
 
 import android.os.Bundle
 import android.graphics.Typeface
