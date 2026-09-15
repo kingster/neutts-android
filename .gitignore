@@ -1,0 +1,60 @@
+# Gradle
+.gradle/
+build/
+**/*.iml
+
+# Project overrides
+local.properties
+
+# Android SDK & build outputs
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.apj
+*.war
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.class
+*.zip
+*.tar.gz
+*.so
+
+# Kotlin
+*.kotlin_metadata
+*.kotlin_module
+*.kt.jar
+.kotlin/
+
+# Android generated files
+proguard/
+proguard_logs/
+mapping.txt
+metadata/
+
+# IDE
+.idea/
+*.iws
+*.ipr
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# User-specific
+signing.properties
+
+# Models directory (generated/loaded models)
+models/
+*.onnx
+*.gguf
+.venv-export/
+
+# Plans directory
+plans/
+
+# Logs
+*.log

@@ -1,0 +1,6 @@
+[submodule "app/src/main/cpp/llama.cpp"]
+	path = app/src/main/cpp/llama.cpp
+	url = git@github.com:ggerganov/llama.cpp.git
+[submodule "app/src/main/cpp/espeak-ng"]
+	path = app/src/main/cpp/espeak-ng
+	url = git@github.com:espeak-ng/espeak-ng.git
