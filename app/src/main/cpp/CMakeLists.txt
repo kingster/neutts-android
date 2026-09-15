@@ -52,13 +52,13 @@ target_include_directories(neutts_bridge PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/llama.cpp/include
 )
 
-# Enable 16KB page alignment for Android 15+ (API 35)
-# This is required for devices running with 16KB page size
-if(ANDROID_PLATFORM_LEVEL GREATER_EQUAL 35)
-    target_link_options(neutts_bridge PRIVATE
-        "LINKER:--page-align"
-    )
-endif()
+# Enable 16KB page alignment for Android 15+ (API 35).
+# This is required for devices running with 16KB page size. Applied
+# unconditionally: NDK r27+ already defaults to 16KB alignment, but forcing
+# -z max-page-size=16384 guarantees it regardless of NDK/platform changes.
+target_link_options(neutts_bridge PRIVATE
+    "LINKER:-z,max-page-size=16384"
+)
 
 # Link libraries
 target_link_libraries(neutts_bridge
@@ -79,4 +79,9 @@ target_link_libraries(phonemizer
     ${log-lib}
     espeak-ng
     espeak-ng-config
+)
+
+# Apply 16KB page alignment to phonemizer as well
+target_link_options(phonemizer PRIVATE
+    "LINKER:-z,max-page-size=16384"
 )

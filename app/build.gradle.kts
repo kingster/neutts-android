@@ -19,7 +19,11 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags("-std=c++17 -O3")
-                arguments("-DANDROID_STL=c++_shared", "-DANDROID_ABI=arm64-v8a")
+                arguments(
+                    "-DANDROID_STL=c++_shared",
+                    "-DANDROID_ABI=arm64-v8a",
+                    "-DANDROID_PLATFORM=android-35"
+                )
             }
         }
         ndk {
@@ -27,6 +31,14 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file(System.getenv("NEUTTS_KEYSTORE") ?: "../neutts-release.keystore")
+            storePassword = System.getenv("NEUTTS_KEYSTORE_PASS") ?: ""
+            keyAlias = System.getenv("NEUTTS_KEY_ALIAS") ?: "neutts_release"
+            keyPassword = System.getenv("NEUTTS_KEY_PASS") ?: ""
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -34,6 +46,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
         debug {
             isDebuggable = true
@@ -52,6 +65,9 @@ android {
         jvmTarget = "11"
     }
     packagingOptions {
+        jniLibs {
+            useLegacyPackaging = false
+        }
         resources {
             excludes.addAll(listOf(
                 "META-INF/DEPENDENCIES",

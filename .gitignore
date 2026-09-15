@@ -58,3 +58,7 @@ plans/
 
 # Logs
 *.log
+
+
+# Keystore files
+*.keystore
