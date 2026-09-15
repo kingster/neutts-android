@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NeuTTS Air Engine</string>
+    <string name="app_name">NeuTTS Engine</string>
     <string name="tts_ready">TTS Engine Ready</string>
     <string name="test_synthesis">Test Synthesis</string>
     <string name="enter_text">Enter text to synthesize</string>
