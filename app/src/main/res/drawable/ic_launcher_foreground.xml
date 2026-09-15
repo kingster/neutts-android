@@ -4,10 +4,23 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M54,30 C54,30 30,30 30,54 C30,78 54,78 54,78 C54,78 78,78 78,54 C78,30 54,30 54,30 Z" />
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M54,42 C57.28,42 60,39.28 60,36 C60,32.72 57.28,29.99 54,29.99 C50.72,29.99 48,32.72 48,36 C48,39.28 50.72,42 54,42 Z" />
+    <!-- Text-to-speech icon from svgrepo.com -->
+    <group
+        android:translateX="18"
+        android:translateY="18"
+        android:scaleX="3.0"
+        android:scaleY="3.0">
+        <path
+            android:fillColor="#669df6"
+            android:pathData="M 2.01,6.99 h 6.64 v 1.67 h -6.64 Z" />
+        <path
+            android:fillColor="#669df6"
+            android:pathData="M 11.17,15.32 L 2,15.32 L 2,16.99 Z" />
+        <path
+            android:fillColor="#669df6"
+            android:pathData="M 4.51,11.16 L 2,11.16 L 2,12.82 L 6.18,12.82 L 12,12.82 L 10.33,11.16 Z" />
+        <path
+            android:fillColor="#4285f4"
+            android:pathData="M12,9.07a.42.42,0,0,1,.42-.36.41.41,0,0,1,.41.36v9.18a2.09,2.09,0,0,0,2.61,2A2.16,2.16,0,0,0,17,18.14V5.75a.4.4,0,0,1,.19-.4.41.41,0,0,1,.45,0,.4.4,0,0,1,.19.4v9.16a2.07,2.07,0,0,0,.81,1.64,2,2,0,0,0,1.8.37A2.16,2.16,0,0,0,22,14.8V12H20.33v2.92a.4.4,0,0,1-.19.4.41.41,0,0,1-.45,0,.4.4,0,0,1-.19-.4V5.75a2.09,2.09,0,0,0-2.61-2,2.16,2.16,0,0,0-1.56,2.13V18.25a.4.4,0,0,1-.19.4.41.41,0,0,1-.45,0,.4.4,0,0,1-.19-.4V9.08a2.07,2.07,0,0,0-4.11-.36,2.4,2.4,0,0,0-.05.46v2L12,12.82V9.07Z" />
+    </group>
 </vector>
